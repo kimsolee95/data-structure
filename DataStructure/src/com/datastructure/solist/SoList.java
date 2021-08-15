@@ -56,14 +56,47 @@ public class SoList<E> implements List<E> {
 	
 	@Override
 	public boolean add(E value) {
-		// TODO Auto-generated method stub
+		defaultAdd(value);
 		return false;
 	}
+	
+	public void defaultAdd(E value) { 
+		//arrayList에서 인자로 더할 value만 있을 시, 배열의 마지막에 value가 온다.(default) 
+		//만약 현재의 요소담긴 배열 전체의 크기와 실제 담긴 요소 개수가 같으면 동적할당을 하는 메서드를 호출한다.
+		if (size == array.length) { resize(); }
+		
+		//배열 끝 위치 index에 value를 넣어준다.
+		array[size] = value;
+		size++; 
+	}
+	
 
 	@Override
 	public void add(int index, E value) {
-		// TODO Auto-generated method stub
 		
+		//배열의 index를 벗어난 index를 인자로 한다면 exception을 발생시켜야 한다.
+		if (index > size || index < 0) { throw new IndexOutOfBoundsException(); }
+		
+		if (index == size) { //인자로 받은 index가 현재 담긴 요소의 개수를 뜻하는 변수(size)와 같다면
+
+			defaultAdd(value); //배열 끝에 value를 추가한다.	
+			
+		} else if (index != size) { //인자로 받은 index가 현재 담긴 요소의 개수를 뜻하는 변수(size)와 틀리다면
+
+			if (size == array.length) { //만약 배열 내 요소 개수와 배열 길이가 같다면
+				resize(); //배열을 동적할당하는 메서드 호출한다.
+			}
+			
+			//특정 index에 value를 놓을 때에는
+			//인자로 받아온 해당 index를 기준으로 하여 뒤편에 있는 data는 index+1 되어야 한다.
+			for (int i=size; i>index; i--) {
+				array[i] = array[i - 1]; //베열을 도표로 그릴 시, data가 한칸씩 우측으로 이동하는 그림과 동일한 형태
+			}
+			
+			array[index] = value; //지정한 index에 value를 할당한다.
+			size++;
+		}
+			
 	}
 
 	@Override
@@ -74,9 +107,12 @@ public class SoList<E> implements List<E> {
 
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
+		return size;
 	}
 
+	@Override
+	public boolean isEmpty() {
+		return size == 0; 
+	}
 	
 }
