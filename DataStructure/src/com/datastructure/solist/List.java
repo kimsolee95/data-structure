@@ -29,10 +29,7 @@ public interface List<E> {
 	 * */
 	int size();
 	
-	/**
-	 * @return 리스트의 요소 유무에 따른 boolean 값
-	 *  */
-	boolean isEmpty();
+	
 	
 	
 	
