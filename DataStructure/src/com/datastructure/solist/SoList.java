@@ -101,8 +101,14 @@ public class SoList<E> implements List<E> {
 
 	@Override
 	public E get(int index) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		if (index >= size || index < 0) {
+			throw new IndexOutOfBoundsException();
+		}
+		
+		return (E) array[index]; 
+		//Object로 들어있는 요소를
+		// Generic Element E로 캐스팅하여 return 시켜야 한다. (원 data의 type)
 	}
 
 	@Override

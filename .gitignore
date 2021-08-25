@@ -1,2 +1,7 @@
 /.metadata/
 .metadata/.plugins/org.eclipse.m2e.logback.configuration/0.log
+*.ini
+.metadata/.log
+.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index
+.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
+.metadata/version.ini
