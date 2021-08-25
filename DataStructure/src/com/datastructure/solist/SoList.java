@@ -112,6 +112,30 @@ public class SoList<E> implements List<E> {
 	}
 
 	@Override
+	public E remove(int index) {
+		
+		if (index >= size || index < 0) {
+			throw new IndexOutOfBoundsException();
+		}
+		
+		E element = (E) array[index]; 
+		// 배열 내에 Object로 담긴 요소를 generic E type으로 캐스팅하여 변수 하나로 담아놓는다.
+		// 삭제 완료한 요소를 반환 시, 해당 변수를 반환할 예정임.
+		
+		//arrayList는 삭제가 진행되면 삭제 위치 뒤에 있는 요소들을 모두 위치 이동(배열 왼쪽으로 한칸씩)한다.
+		//그러므로 삭제 전 배열 마지막 위치 index는 null 이 된다.
+		for (int i=index; i<size; i++) {
+			array[i] = array[i + 1];
+			array[i + 1] = null;
+			//JAVA의 GC가 null이 된 배열 내 메모리를 자동으로 처리한다.
+		}
+		
+		size--;
+		resize(); //arrayList는 동적배열이므로 다시 배열크기를 자동적으로 조절해야 한다.
+		return element;
+	}	
+	
+	@Override
 	public int size() {
 		return size;
 	}
