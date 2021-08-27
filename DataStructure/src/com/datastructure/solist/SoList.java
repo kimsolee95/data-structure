@@ -145,4 +145,44 @@ public class SoList<E> implements List<E> {
 		return size == 0; 
 	}
 	
+	@Override
+	public int indexOf(Object value) {
+		
+		if (value == null) {
+			for (int i=0; i<size; i++) {
+				if(array[i]==null) { return i; }
+			}
+		} else {
+			for (int i=0; i<size; i++) {
+				if (value.equals(array[i])) { return i; }
+			}
+		}
+		
+		return -1; //배열 내에 인자로 받아온 value와 일치하는 요소가 없다면 -1을 반환.
+	}
+	
+	@Override
+	public boolean remove(Object value) {
+		//미리 구현해놓은
+		//E remove(int index) 와 int indexOf(Object value) method 기능을 활용한다.
+		
+		int index = indexOf(value); //인자로 받은 value가 배열의 index로 존재하는지 확인한다.
+		
+		if (index != -1) { //배열 내 존재하는 value라면
+			 
+			if (value == null) { //해당 value 값이 null이라면 
+				if (array[index] == null) {
+					remove(index);
+					return true;
+				}
+			} else {  
+				if (value.equals(array[index])) {
+					remove(index);
+					return true;
+				}
+			}
+		}
+		
+		return false;
+	}
 }

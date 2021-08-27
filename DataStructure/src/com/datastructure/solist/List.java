@@ -42,4 +42,18 @@ public interface List<E> {
 	 *  */
 	E remove(int index);
 	
+	/**
+	 * 
+	 *  @param index를 찾고 싶은 배열 내의 요소
+	 *  @return 인자로 받아온 요소와 배열 내 요소와 일치하는 index를 return
+	 *  		존재하지 않을 시, -1을 return
+	 *  */
+	int indexOf(Object value);
+	
+	/**
+	 * 
+	 * @param 삭제하고자 하는 요소
+	 * @return 인자로 받은 요소가 배열 내 요소로 존재 및 삭제 성공 시, true 반환
+	 *  */
+	boolean remove(Object value);
 }
