@@ -37,7 +37,7 @@ public interface List<E> {
 	/**
 	 * 지정한 인덱스에 맞는 배열 내의 요소를 삭제
 	 * 
-	 * @paran int index 리스트 내 data가 위치한 idnex
+	 * @param int index 리스트 내 data가 위치한 idnex
 	 * @return 삭제 완료한 요소
 	 *  */
 	E remove(int index);
