@@ -1,5 +1,6 @@
 package com.datastructure.solist;
 
+
 public class TestMakedArrayList {
 	
 	public static void main(String[] args) {
@@ -7,6 +8,8 @@ public class TestMakedArrayList {
 		List<String> makedArrayList = new SoList<>(); //String만 담는 배열
 		List<Integer> arrayList2 = new SoList<>(); //int형만 담는 배열
 		
+		
+				
 		makedArrayList.add("처음 add 시, index 0 요소");
 		makedArrayList.add("처음 add 시, index 1 요소");
 		makedArrayList.add("처음 add 시, index 2 요소");

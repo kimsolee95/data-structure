@@ -56,4 +56,10 @@ public interface List<E> {
 	 * @return 인자로 받은 요소가 배열 내 요소로 존재 및 삭제 성공 시, true 반환
 	 *  */
 	boolean remove(Object value);
+	
+	/**
+	 * 
+	 * 해당 배열의 모든 요소를 삭제.
+	 *  */
+	void clear();
 }
