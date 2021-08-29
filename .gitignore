@@ -25,3 +25,4 @@
 .metadata/.log
 .metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources
 *.prefs
+.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources
