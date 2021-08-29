@@ -185,4 +185,19 @@ public class SoList<E> implements List<E> {
 		
 		return false;
 	}
+	
+	@Override
+	public void clear() {
+		
+		//배열 내 모든 요소를 null로 한다.
+		for (int i=0; i<size; i++) {
+			array[i] = null;
+		}
+		
+		array = Arrays.copyOf(array, initialCapacity); 
+		//초기 arrayList의 크기인 10으로 다시 새 배열을 복제한 것을 
+		//요소를 직접 담는 변수인 array에 할당해준다.
+		
+		size = 0; //요소의 개수를 다시 0으로 돌려놓는다.
+	}
 }
