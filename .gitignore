@@ -26,3 +26,6 @@
 .metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources
 *.prefs
 .metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources
+.metadata/.log
+.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
+.metadata/version.ini
