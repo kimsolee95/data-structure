@@ -71,7 +71,7 @@ public interface List<E> {
 	
 	/**
 	 * @param 배열 내 index와 해당 index에 set할 요소
-	 * @return set한 요소
+	 * @return set하기 이전의 배열 내 원래 요소의 값
 	 *  */
 	E set(int index, Object element);
 }
