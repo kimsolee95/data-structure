@@ -68,4 +68,10 @@ public interface List<E> {
 	 * @return boolean
 	 *  */
 	boolean contains(Object value);
+	
+	/**
+	 * @param 배열 내 index와 해당 index에 set할 요소
+	 * @return set한 요소
+	 *  */
+	E set(int index, Object element);
 }

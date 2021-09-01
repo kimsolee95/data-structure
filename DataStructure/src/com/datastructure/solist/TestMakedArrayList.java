@@ -1,5 +1,6 @@
 package com.datastructure.solist;
 
+import java.util.ArrayList;
 
 public class TestMakedArrayList {
 	
@@ -7,7 +8,7 @@ public class TestMakedArrayList {
 		
 		List<String> makedArrayList = new SoList<>(); //String만 담는 배열
 		List<Integer> arrayList2 = new SoList<>(); //int형만 담는 배열
-		
+		ArrayList<String> originalArrayList = new ArrayList<>();
 		
 				
 		makedArrayList.add("처음 add 시, index 0 요소");
@@ -62,6 +63,10 @@ public class TestMakedArrayList {
 		System.out.println(makedArrayList.get(1));
 		System.out.println(makedArrayList.get(2));
 		
+		//set test
+		System.out.println("만든 arrayList에 set method를 통해 set한 요소를 확인해봅니다.");
+		makedArrayList.set(0, "set method test입니다.");
+		System.out.println(makedArrayList.get(0));
 	}
 
 }

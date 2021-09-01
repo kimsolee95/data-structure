@@ -220,4 +220,18 @@ public class SoList<E> implements List<E> {
 		
 		return false;
 	}
+	
+	@Override
+	public E set(int index, Object value) {
+		
+		//배열의 index를 벗어나는 값이 인자로 온다면 exception 처리를 해야 한다.
+		if (index > size || index < 0) { throw new IndexOutOfBoundsException(); }
+
+		//반환하는 값은 set method가 동작하기 이전의 Object를 E로 casting한 값이다.
+		E element = (E) array[index]; 
+		
+		array[index] = value;
+		
+		return element;
+	}
 }
