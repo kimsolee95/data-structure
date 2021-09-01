@@ -200,4 +200,24 @@ public class SoList<E> implements List<E> {
 		
 		size = 0; //요소의 개수를 다시 0으로 돌려놓는다.
 	}
+	
+	@Override
+	public boolean contains(Object value) {
+		
+		int index = indexOf(value);
+		
+		if (index != -1) {
+			if (value == null) {
+				if (array[index] == null) {
+					return true;
+				}
+			} else {
+				if (array[index] == value) {
+					return true;
+				}
+			}
+		}
+		
+		return false;
+	}
 }

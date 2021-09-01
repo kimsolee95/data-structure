@@ -62,4 +62,10 @@ public interface List<E> {
 	 * 해당 배열의 모든 요소를 삭제.
 	 *  */
 	void clear();
+	
+	/**
+	 * @param 배열 내 들어있는지 확인하려는 요소의 값
+	 * @return boolean
+	 *  */
+	boolean contains(Object value);
 }
