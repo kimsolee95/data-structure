@@ -74,4 +74,9 @@ public interface List<E> {
 	 * @return set하기 이전의 배열 내 원래 요소의 값
 	 *  */
 	E set(int index, Object element);
+	
+	/** 
+	 * 배열 내의 요소 개수와 일치하게끔 배열의 size를 조정.
+	 * */
+	void trimToSize();
 }

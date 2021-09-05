@@ -234,4 +234,20 @@ public class SoList<E> implements List<E> {
 		
 		return element;
 	}
+	
+	@Override
+	public void trimToSize() {
+		//만약 object를 담은 배열의 크기가 실제 요소의 개수보다 적다면
+		if (size < array.length) {
+			
+			if (size == 0) {
+				//요소가 아무것도 안 들어간 상태에 맞게끔 빈 배열을 array에 할당하도록 한다.
+				array = emptyArray; 
+			} else {
+				//현재 가진 요소의 개수에 맞는 크기로 지정하여 copy한 배열을 array변수에 할당한다.
+				array = Arrays.copyOf(array, size);
+			}
+		}
+		
+	}
 }
