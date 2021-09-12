@@ -2,7 +2,7 @@ package com.datastructure.solist;
 
 import java.util.Arrays;
 
-public class SoList<E> implements List<E> {
+public class SoList<E> implements List<E>, Cloneable {
 
 	private int initialCapacity = 10; //기본적으로 할당되는 ArrayList의 크기
 	private Object[] emptyArray = {}; //빈 배열
@@ -249,5 +249,23 @@ public class SoList<E> implements List<E> {
 			}
 		}
 		
+	}
+	
+	@Override
+	public Object clone() throws CloneNotSupportedException {
+		//얕은 복사(shallow copy)가 아닌 깊은 복사를 해야 한다.
+		//즉, 복사한 객체에서 data를 조작하더라도 원본 data에는 영향이 없어야 한다.
+		//기존 SoList와 동일한 SoList객체를 새롭게 return해야 함.
+				
+		
+		//Object 객체에 있는 method인 clone()을 사용하여 새 SoList객체를 만든다.
+		//clone()의 접근자는 protected임 -> Cloneable 인터페이스를 implement 할 것.
+		SoList<?> newCloneList = (SoList<?>) super.clone();
+		
+		newCloneList.array = new Object[size];
+		
+		System.arraycopy(array, 0, newCloneList.array, 0, size);
+		
+		return newCloneList;
 	}
 }
