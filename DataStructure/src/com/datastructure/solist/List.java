@@ -79,4 +79,10 @@ public interface List<E> {
 	 * 배열 내의 요소 개수와 일치하게끔 배열의 size를 조정.
 	 * */
 	void trimToSize();
+
+	/** 
+	 * deep copy를 통해서 원 배열 객체를 하나 더 복사하여 return.
+	 * @return Object(깊은 복사한 배열 객체)
+	 * */
+	//Object clone();
 }
