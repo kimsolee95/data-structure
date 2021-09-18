@@ -6,8 +6,11 @@ public class TestMakedArrayList {
 	
 	public static void main(String[] args) {
 		
+		/* 직접 구현한 soList */
 		List<String> makedArrayList = new SoList<>(); //String만 담는 배열
 		List<Integer> arrayList2 = new SoList<>(); //int형만 담는 배열
+		
+		/* arrayList API */
 		ArrayList<String> originalArrayList = new ArrayList<>();
 		
 				
@@ -69,8 +72,6 @@ public class TestMakedArrayList {
 		System.out.println(makedArrayList.get(0));
 		
 		//clone test (makedArrayList를 clone method를 통해 deep copy하는 test)
-		//List<String> newCloneList =  makedArrayList.clone();
-		
 		SoList<String> originalList = new SoList<String>();
 		
 		originalList.add("1요소");
@@ -95,6 +96,10 @@ public class TestMakedArrayList {
 		
 		try {
 			cloneList = (SoList<String>) originalList.clone();
+			//현재 method는 완벽하게 내용물을 복제하는 것이 아님
+			// 예시: originalList는 array에 [6][7] ... [9] 가 null 값으로 들어간 상태
+			// cloneList는 array에 [0][1] ... [4] 까지는 original과 동일하지만
+			// 값이 존재하지 않는 null 값의 index 부분은 없다.
 		} catch (CloneNotSupportedException e) {
 			e.printStackTrace();
 		} 
@@ -107,9 +112,9 @@ public class TestMakedArrayList {
 		System.out.println(cloneList.get(3));
 		System.out.println(cloneList.get(4));
 
-		//cloneList.remove(4);
-		//cloneList.remove(3);
-		//cloneList.remove(2);
+		cloneList.remove(4);
+		cloneList.remove(3);
+		cloneList.remove(2);
 		
 		
 		
