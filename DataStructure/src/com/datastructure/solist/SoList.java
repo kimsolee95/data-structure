@@ -270,4 +270,23 @@ public class SoList<E> implements List<E>, Cloneable {
 		
 		return newCloneList;
 	}
+	
+	@Override
+	public int lastIndexOf(Object value) {
+		
+		//indexOf는 작은 인덱스에서 큰 인덱스 순으로 인자 value에 해당하는 index를 찾으나,
+		//lastIndexOf는 큰 인덱스 -> 작은 인덱스 순으로 찾는다.
+		for (int i=size - 1; i>=0; i--) {
+			
+			if (value == null) {
+				if (array[i] == null) { return i; }
+				else { continue; }
+			}
+			else if (value.equals(array[i])) {
+				return i;
+			}
+		} 
+				
+		return -1;
+	}
 }

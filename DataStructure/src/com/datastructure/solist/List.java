@@ -85,4 +85,11 @@ public interface List<E> {
 	 * @return Object(깊은 복사한 배열 객체)
 	 * */
 	//Object clone();
+	
+	/**
+	 * @param index를 찾고 싶은 배열 요소
+	 * @return 인자로 받아온 요소와 배열 내 요소와 일치하는 index를 return
+	 *  		존재하지 않을 시, -1을 return
+	 *  */
+	int lastIndexOf(Object value);
 }
