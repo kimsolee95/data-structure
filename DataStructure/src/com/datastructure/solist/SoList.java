@@ -289,4 +289,14 @@ public class SoList<E> implements List<E>, Cloneable {
 				
 		return -1;
 	}
+	
+	@Override
+	public Object[] toArray() {
+		
+		//return 할 newArray는
+		//원래 존재하는 array를 그 배열이 가진 요소의 개수만큼 복사한 Object[]이다.
+		Object[] newArray = Arrays.copyOf(array, size);
+		
+		return newArray;
+	}
 }

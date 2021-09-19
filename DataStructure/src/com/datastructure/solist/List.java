@@ -92,4 +92,9 @@ public interface List<E> {
 	 *  		존재하지 않을 시, -1을 return
 	 *  */
 	int lastIndexOf(Object value);
+	
+	/**
+	 * @return arrayList의 리스트를 Object[] 형태로 반환
+	 *  */
+	Object[] toArray();
 }
